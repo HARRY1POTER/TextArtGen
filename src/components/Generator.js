@@ -1,15 +1,17 @@
 import React, { useState } from "react";
 import axios from "axios";
+import ConfettiExplosion from "react-confetti-explosion";
+import defaultImage from "../medium.png";
 
-const API_KEY =
-  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiODlkZjJhMzgtYzM5NS00MTJmLWI3ZTktMDk1YmQyN2E3MTlhIiwidHlwZSI6ImFwaV90b2tlbiJ9.yAVFe-0fZpT62OtX-Lxlr-q4QUAHhC_Z2vE7N4uKLwg";
-const API_URL = "https://api.edenai.run/v2/image/generation";
+const API_KEY = process.env.REACT_APP_API_KEY;
+const API_URL = process.env.REACT_APP_API_URL;
 
 function ImageGenerator() {
   const [text, setText] = useState("");
-  const [imageUrl, setImageUrl] = useState("");
+  const [imageUrl, setImageUrl] = useState(defaultImage);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
+  const [showConfetti, setShowConfetti] = useState(false);
 
   const handleGenerateImage = async () => {
     try {
@@ -31,8 +33,6 @@ function ImageGenerator() {
         }
       );
 
-      console.log("Response:", response.data);
-
       const providerData = response?.data?.["openai/dall-e-3"];
       const imageUrl = providerData?.items?.[0]?.image_resource_url;
 
@@ -43,7 +43,6 @@ function ImageGenerator() {
       }
     } catch (error) {
       setError("Error generating image. Please try again.");
-      console.error("Error generating image:", error);
     } finally {
       setLoading(false);
     }
@@ -56,55 +55,76 @@ function ImageGenerator() {
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
+
+    setShowConfetti(true);
+    setTimeout(() => setShowConfetti(false), 3000);
   };
 
   return (
-    <>
-      <div className="">
-        <div className="max-w-6xl  mx-auto p-6 bg-[#3883d2] rounded-lg shadow-lg">
-          <h1 className="text-4xl font-bold text-center text-black mb-4">
-            Text to Image Generator
-          </h1>
+    <div className="min-h-screen flex items-center justify-center  p-6">
+      <div className="max-w-md w-full bg-gradient-to-r from-[#58a9c0] to-[#a8b6f1] rounded-lg shadow-xl p-6 md:p-8 lg:p-10   xl:max-w-3xl xl:px-12 xl:py-8 ">
+        <h1 className="text-2xl md:text-3xl font-bold text-center text-black mb-6">
+          Text to Image Generator
+        </h1>
 
-          <form className="relative items-center">
-            <input
-              className="w-full rounded-full py-5 px-7 text-xl border-none transition-shadow duration-200 shadow-inner shadow-black focus:shadow-[0_0_10px_1000px_rgba(0,0,0,0.5)] outline-none mb-4"
-              value={text}
-              onChange={(e) => setText(e.target.value)}
-              placeholder="Enter your text here..."
+        <form className="relative mb-6">
+          <input
+            className="w-full rounded-lg py-3 px-5 text-base md:text-lg border border-[#ddd] focus:border-[#388ae2] transition-shadow duration-200 shadow-md focus:shadow-lg outline-none mb-2 md:mb-4 placeholder:text-gray-500"
+            value={text}
+            onChange={(e) => setText(e.target.value)}
+            placeholder="Enter your text here..."
+            maxLength={200}
+          />
+          <p className="text-gray-800 text-sm text-right mb-2">
+            {text.length}/200
+          </p>
+          <button
+            className={`w-full py-3 rounded-lg text-base md:text-lg text-white transition-all duration-200 ${
+              loading
+                ? "bg-gray-400 cursor-not-allowed"
+                : "bg-[#1772d4] hover:bg-[#2f74c0] active:scale-95"
+            } shadow-md`}
+            onClick={(e) => {
+              e.preventDefault();
+              handleGenerateImage();
+            }}
+            disabled={loading}
+          >
+            {loading ? "Generating..." : "Generate"}
+          </button>
+        </form>
+
+        {error && (
+          <p className="text-red-500  md:text-xl font-bold text-center mb-4">
+            {error}
+          </p>
+        )}
+        {imageUrl && (
+          <div className="text-center relative">
+            <img
+              className="w-full h-auto rounded-lg shadow-md mb-4 transition-transform transform hover:scale-105 cursor-pointer"
+              src={imageUrl}
+              alt="Generated"
             />
-            <button
-              className={`w-12 h-12 rounded-full text-lg text-white transition-all duration-200 shadow-md shadow-black ${
-                loading
-                  ? "bg-gray-500 cursor-not-allowed"
-                  : "bg-[#2f74c0] hover:bg-[#388ae2] active:scale-75 active:shadow-sm"
-              } absolute right-0 m-3`}
-              onClick={handleGenerateImage}
-              disabled={loading}
-            >
-              {loading ? "On It..." : "Go"}
-            </button>
-          </form>
-
-          {error && <p className="text-red-500 text-center mt-2">{error}</p>}
-          {imageUrl && (
-            <div className="mt-4 text-center">
-              <img
-                className="w-full h-auto rounded-lg shadow-md"
-                src={imageUrl}
-                alt="Generated"
-              />
+            {imageUrl !== defaultImage && (
               <button
-                className="mt-2 px-4 py-2 bg-green-500 text-white rounded"
+                className="px-6 py-3 text-base md:text-lg bg-green-700 text-white rounded-lg shadow-md hover:bg-green-800 transition-colors"
                 onClick={handleDownload}
               >
                 Download
               </button>
-            </div>
-          )}
-        </div>
+            )}
+            {showConfetti && (
+              <ConfettiExplosion
+                force={0.8}
+                duration={3000}
+                particleCount={100}
+              />
+            )}
+          </div>
+        )}
       </div>
-    </>
+    </div>
   );
 }
 
