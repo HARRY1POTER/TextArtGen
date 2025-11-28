@@ -566,7 +566,6 @@ function ImageGenerator() {
             <button
               onClick={downloadShapedImage}
               className="mx-auto mt-6 px-6 py-3 rounded-xl bg-green-600 hover:bg-green-700 text-white font-semibold shadow-lg block"
-              // className="items-center mt-6 px-6 py-3 rounded-xl bg-green-600 hover:bg-green-700 text-white font-semibold shadow-lg"
             >
               Download Shape
             </button>
