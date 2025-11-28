@@ -491,10 +491,12 @@ function ImageGenerator() {
       link.href = canvas.toDataURL("image/png");
       link.click();
     };
+    setTimeout(() => setShowConfetti(false), 3000);
+    setShowConfetti(true);
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center p-10 bg-gradient-to-br from-[#1f3f68] to-[#3d66b4]">
+    <div className="min-h-screen flex items-center justify-center p-10 bg-gradient-to-br from-[#1f3f68] to-[#7b8ac5]">
       <div className="w-full max- w-5xl bg-white/10 backdrop-blur-xl rounded-3xl shadow-2xl p-10 border border-white/20 grid grid-cols-1 md:grid-cols-2 gap-10">
         {/* LEFT SIDE - Preview */}
         <div className="flex flex-col items-center">
@@ -508,17 +510,6 @@ function ImageGenerator() {
               alt="Generated"
             />
           </div>
-
-          {imageUrl !== defaultImage && (
-            <button
-              onClick={downloadShapedImage}
-              className="mt-6 px-6 py-3 rounded-xl bg-green-600 hover:bg-green-700 text-white font-semibold shadow-lg"
-            >
-              Download Shape
-            </button>
-          )}
-
-          {showConfetti && <ConfettiExplosion />}
         </div>
 
         {/* RIGHT SIDE - Controls */}
@@ -571,6 +562,16 @@ function ImageGenerator() {
               </button>
             ))}
           </div>
+          {imageUrl !== defaultImage && (
+            <button
+              onClick={downloadShapedImage}
+              className="mx-auto mt-6 px-6 py-3 rounded-xl bg-green-600 hover:bg-green-700 text-white font-semibold shadow-lg block"
+              // className="items-center mt-6 px-6 py-3 rounded-xl bg-green-600 hover:bg-green-700 text-white font-semibold shadow-lg"
+            >
+              Download Shape
+            </button>
+          )}
+          {showConfetti && <ConfettiExplosion />}
         </div>
       </div>
     </div>
