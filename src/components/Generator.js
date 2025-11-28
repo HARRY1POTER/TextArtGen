@@ -1,8 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import axios from "axios";
 import ConfettiExplosion from "react-confetti-explosion";
 import defaultImage from "../medium.png";
-import { useEffectEvent } from "react";
 
 function ImageGenerator() {
   const [text, setText] = useState("");
@@ -14,10 +13,6 @@ function ImageGenerator() {
 
   const API_KEY = process.env.REACT_APP_API_KEY;
   const API_URL = process.env.REACT_APP_API_URL;
-  // useEffect(() => {
-  //   console.log(API_KEY, "kkkkkkkkkkkkkkk");
-  //   console.log(API_URL, "uuuuuuuuuuuuuu");
-  // });
 
   // const handleGenerateImage = async () => {
   //   try {
