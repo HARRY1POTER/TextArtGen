@@ -1,10 +1,8 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
 import ConfettiExplosion from "react-confetti-explosion";
 import defaultImage from "../medium.png";
-
-const API_KEY = process.env.REACT_APP_API_KEY;
-const API_URL = process.env.REACT_APP_API_URL;
+import { useEffectEvent } from "react";
 
 function ImageGenerator() {
   const [text, setText] = useState("");
@@ -12,36 +10,122 @@ function ImageGenerator() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const [showConfetti, setShowConfetti] = useState(false);
+  // console.log(imageUrl);
+
+  const API_KEY = process.env.REACT_APP_API_KEY;
+  const API_URL = process.env.REACT_APP_API_URL;
+  // useEffect(() => {
+  //   console.log(API_KEY, "kkkkkkkkkkkkkkk");
+  //   console.log(API_URL, "uuuuuuuuuuuuuu");
+  // });
+
+  // const handleGenerateImage = async () => {
+  //   try {
+  //     setLoading(true);
+  //     setError("");
+
+  //     const response = await axios.post(
+  //       API_URL,
+  //       {
+  //         providers: "openai/dall-e-3",
+  //         text: text,
+  //         resolution: "1024x1024",
+  //       },
+  //       {
+  //         headers: {
+  //           "Content-Type": "application/json",
+  //           Authorization: `Bearer ${API_KEY}`,
+  //         },
+  //       }
+  //     );
+
+  //     const providerData = response?.data?.["openai/dall-e-3"];
+  //     const imageUrl = providerData?.items?.[0]?.image_resource_url;
+
+  //     if (imageUrl) {
+  //       setImageUrl(imageUrl);
+  //     } else {
+  //       throw new Error("Image URL not found in response");
+  //     }
+  //   } catch (error) {
+  //     setError("Error generating image. Please try again.");
+  //   } finally {
+  //     setLoading(false);
+  //   }
+  // };
+
+  // const handleGenerateImage = async () => {
+  //   try {
+  //     setLoading(true);
+  //     setError("");
+
+  //     const response = await axios.post(
+  //       API_URL,
+  //       {
+  //         input: {
+  //           text: text,
+  //           negative_prompt: "realistic",
+  //           image_size: { width: 1024, height: 1024 },
+  //           guidance_scale: 5,
+  //           num_images: 4,
+  //           seed: 1234,
+  //           output_format: "png",
+  //         },
+  //       },
+  //       {
+  //         headers: {
+  //           accept: "application/json",
+  //           Authorization: `Bearer ${API_KEY}`,
+  //           "Content-Type": "application/json",
+  //         },
+  //       }
+  //     );
+
+  //     const outputImages = response?.data?.output || [];
+  //     const imageUrl = outputImages.map((image) => image.url);
+
+  //     if (imageUrl.length > 0) {
+  //       setImageUrl(imageUrl);
+  //     } else {
+  //       throw new Error("Image URL not found in response");
+  //     }
+  //   } catch (error) {
+  //     setError("Error generating image. Please try again.");
+  //   } finally {
+  //     setLoading(false);
+  //   }
+  // };
 
   const handleGenerateImage = async () => {
     try {
       setLoading(true);
       setError("");
 
-      const response = await axios.post(
-        API_URL,
-        {
-          providers: "openai/dall-e-3",
-          text: text,
-          resolution: "1024x1024",
+      const form = new FormData();
+      form.append("prompt", text); // user prompt
+
+      const response = await axios.post(API_URL, form, {
+        headers: {
+          // "Access-Control-Allow-Origin": "*",
+          "x-api-key": API_KEY,
+          "Content-Type": "multipart/form-data",
         },
-        {
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${API_KEY}`,
-          },
-        }
+        responseType: "arraybuffer", // important: returns image buffer
+      });
+
+      // Convert buffer → Base64 image
+      const base64Image = btoa(
+        new Uint8Array(response.data).reduce(
+          (data, byte) => data + String.fromCharCode(byte),
+          ""
+        )
       );
 
-      const providerData = response?.data?.["openai/dall-e-3"];
-      const imageUrl = providerData?.items?.[0]?.image_resource_url;
+      const imageUrl = `data:image/png;base64,${base64Image}`;
 
-      if (imageUrl) {
-        setImageUrl(imageUrl);
-      } else {
-        throw new Error("Image URL not found in response");
-      }
+      setImageUrl([imageUrl]); // since you used an array earlier
     } catch (error) {
+      console.error(error);
       setError("Error generating image. Please try again.");
     } finally {
       setLoading(false);
