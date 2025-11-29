@@ -408,15 +408,15 @@ function ImageGenerator() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const [showConfetti, setShowConfetti] = useState(false);
-  const [shape, setShape] = useState("rounded");
+  const [shape, setShape] = useState("square");
 
   const API_KEY = process.env.REACT_APP_API_KEY;
   const API_URL = process.env.REACT_APP_API_URL;
 
   const SHAPES = {
     // rectangle: "clip-rectangle",
-    rounded: "clip-rounded",
     square: "clip-square",
+    rounded: "clip-rounded",
     circle: "clip-circle",
     oval: "clip-oval",
     hexagon: "clip-hexagon",
@@ -496,7 +496,7 @@ function ImageGenerator() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center p-10 bg-gradient-to-br from-[#1f3f68] to-[#7b8ac5] ">
+    <div className="min-h-screen flex items-center justify-center p-10 bg-gradient-to-br from-[#122642] to-[#7b8ac5] ">
       <div className="w-full max- w-5xl bg-white/10 backdrop-blur-xl rounded-3xl shadow-2xl p-10 border border-white/20 grid grid-cols-1 lg:grid-cols-2 gap-10">
         {/* LEFT SIDE - Preview */}
         <div className="flex flex-col items-center">
@@ -510,6 +510,15 @@ function ImageGenerator() {
               alt="Generated"
             />
           </div>
+          {imageUrl !== defaultImage && (
+            <button
+              onClick={downloadShapedImage}
+              className="mx-auto mt-6 px-6 py-3 rounded-xl bg-green-600 hover:bg-green-700 text-white font-semibold shadow-lg block xl:hidden "
+            >
+              Download Image
+            </button>
+          )}
+          {showConfetti && <ConfettiExplosion />}
         </div>
 
         {/* RIGHT SIDE - Controls */}
@@ -565,9 +574,9 @@ function ImageGenerator() {
           {imageUrl !== defaultImage && (
             <button
               onClick={downloadShapedImage}
-              className="mx-auto mt-6 px-6 py-3 rounded-xl bg-green-600 hover:bg-green-700 text-white font-semibold shadow-lg block"
+              className="mx-auto mt-6 px-6 py-3 rounded-xl bg-green-600 hover:bg-green-700 text-white font-semibold shadow-lg xl:block hidden"
             >
-              Download Shape
+              Download Image
             </button>
           )}
           {showConfetti && <ConfettiExplosion />}
