@@ -408,7 +408,7 @@ function ImageGenerator() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const [showConfetti, setShowConfetti] = useState(false);
-  const [shape, setShape] = useState("rectangle");
+  const [shape, setShape] = useState("rounded");
 
   const API_KEY = process.env.REACT_APP_API_KEY;
   const API_URL = process.env.REACT_APP_API_URL;
@@ -496,8 +496,8 @@ function ImageGenerator() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center p-10 bg-gradient-to-br from-[#1f3f68] to-[#7b8ac5]">
-      <div className="w-full max- w-5xl bg-white/10 backdrop-blur-xl rounded-3xl shadow-2xl p-10 border border-white/20 grid grid-cols-1 md:grid-cols-2 gap-10">
+    <div className="min-h-screen flex items-center justify-center p-10 bg-gradient-to-br from-[#1f3f68] to-[#7b8ac5] ">
+      <div className="w-full max- w-5xl bg-white/10 backdrop-blur-xl rounded-3xl shadow-2xl p-10 border border-white/20 grid grid-cols-1 lg:grid-cols-2 gap-10">
         {/* LEFT SIDE - Preview */}
         <div className="flex flex-col items-center">
           <h2 className="text-white text-xl font-semibold mb-4">Preview</h2>
@@ -506,7 +506,7 @@ function ImageGenerator() {
             <img
               id="final-image"
               src={imageUrl}
-              className={`w-f ull h-f ull object-cover transition-all duration-300 ${SHAPES[shape]}`}
+              className={`w-f null h-f ull 2xl:w-[1000px] object-cover transition-all duration-300 ${SHAPES[shape]}`}
               alt="Generated"
             />
           </div>
@@ -547,7 +547,7 @@ function ImageGenerator() {
           </h3>
 
           {/* SHAPES GRID */}
-          <div className="grid grid-cols-3 md:grid-cols-4 gap-3">
+          <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-3 ">
             {Object.keys(SHAPES).map((s) => (
               <button
                 key={s}
@@ -555,7 +555,7 @@ function ImageGenerator() {
                 className={`p-2 rounded-xl text-sm capitalize shadow-md ${
                   shape === s
                     ? "bg-blue-600 text-white"
-                    : "bg-white/80 text-black hover:bg-white"
+                    : "bg-white/80 text-black hover:bg-white "
                 }`}
               >
                 {s}

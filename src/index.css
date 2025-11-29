@@ -16,6 +16,12 @@ code {
     monospace;
 }
 
+@media (min-width: 1900px) {
+  html {
+    font-size: 25px;
+  }
+}
+
 .clip-rectangle {
   clip-path: inset(0%);
 }
