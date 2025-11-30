@@ -18,7 +18,7 @@ export default function ImageGeneratorPage() {
     <div className="relative min-h-screen w-full overflow-hidden text-white">
       {/* --- PARALLAX BACKGROUND LAYERS --- */}
       {/* <div className="parallax-layer layer1 bg-gradient-to-br from-[#122642] to-[#5b6ab5] opacity-80"></div>
-      <div className="parallax-layer layer2 bg-gradient-to-br from-[#0e1d33] to-[#7b8ac5] opacity-70"></div> */}
+      <div className="parallax-layer layer2 bg-gradient-to-br from-[#0e1d33] to-[#7b8ac5] opacity-70"></div>  */}
 
       {/* --- FLOATING PARTICLES --- */}
       {[...Array(20)].map((_, i) => (
