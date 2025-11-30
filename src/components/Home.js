@@ -132,8 +132,9 @@ export default function ImageGeneratorPage() {
           )}
         </div>
       </section> */}
-
-      <ImageGenerator />
+      <span id="generator">
+        <ImageGenerator />
+      </span>
 
       {/* --- EXAMPLES SECTION --- */}
       <section
