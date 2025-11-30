@@ -496,7 +496,7 @@ function ImageGenerator() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center p-10 bg-gradient-to-br from-[#122642] to-[#7b8ac5]">
+    <div className="min-h-sc reen flex items-center justify-center p-10 bg- gradient-to-br from-[#122642] to-[#7b8ac5]">
       <div className="w-full max- w-5xl bg-white/10 backdrop-blur-xl rounded-3xl shadow-2xl p-10 border border-white/20 grid grid-cols-1 lg:grid-cols-2 gap-10">
         {/* LEFT SIDE - Preview */}
         <div className="flex flex-col items-center">
@@ -531,7 +531,9 @@ function ImageGenerator() {
             value={text}
             onChange={(e) => setText(e.target.value)}
             maxLength={200}
-            className="w-full h-32 rounded-xl p-4 text-black bg-white/80 shadow-lg focus:ring-2 ring-blue-300 outline-none"
+            className="w-full h-32 rounded-xl p-4 text-bla ck bg-white/20 shadow-lg focus:ring-2 ring-blue-300 outline-none 
+          
+          "
             placeholder="Describe your image..."
           />
 
@@ -542,11 +544,13 @@ function ImageGenerator() {
           <button
             onClick={handleGenerateImage}
             disabled={loading}
-            className={`w-full py-3 rounded-xl text-white font-semibold shadow-lg transition ${
-              loading
-                ? "bg-gray-500 cursor-not-allowed"
-                : "bg-blue-600 hover:bg-blue-700"
-            }`}
+            className={`w-full py-3 rounded-xl text-white font-semibold shadow-lg transition
+            btn-spark  disabled:opacity-50
+             ${
+               loading
+                 ? "bg-gray-500 cursor-not-allowed"
+                 : "bg-blue-600 hover:bg-blue-700"
+             }`}
           >
             {loading ? "Generating..." : "Generate Image"}
           </button>

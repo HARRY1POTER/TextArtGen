@@ -87,3 +87,89 @@ code {
 .clip-trapezoid {
   clip-path: polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%);
 }
+
+/* --- Floating Glow Particles --- */
+.particle {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 50%;
+  filter: blur(6px);
+  animation: floatUp 12s linear infinite;
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateY(-800px) scale(1.5);
+    opacity: 0;
+  }
+}
+
+/* --- Button Spark Hover Effect --- */
+.btn-spark {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-spark::after {
+  content: "";
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  top: -40px;
+  left: -60px;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.8),
+    transparent 70%
+  );
+  transform: scale(0);
+  opacity: 0;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+.btn-spark:hover::after {
+  transform: scale(2.5);
+  opacity: 1;
+}
+
+/* --- Parallax Background Layers --- */
+.parallax-layer {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-size: cover;
+  background-position: center;
+  will-change: transform;
+}
+
+.layer1 {
+  animation: parallax1 20s ease-in-out infinite alternate;
+}
+.layer2 {
+  animation: parallax2 30s ease-in-out infinite alternate;
+}
+
+@keyframes parallax1 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-40px);
+  }
+}
+
+@keyframes parallax2 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(40px);
+  }
+}
