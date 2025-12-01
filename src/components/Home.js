@@ -96,7 +96,7 @@ export default function ImageGeneratorPage() {
 
       <section
         id="features"
-        className="max-w-5xl mx-auto grid md:grid-cols-2 gap-8 px-6 py-16"
+        className="scroll-mt-32 max-w-5xl mx-auto grid md:grid-cols-2 gap-8 px-6 py-16"
       >
         {[
           ["⚡ Fast Results", "Generate high-quality art in seconds."],
@@ -180,14 +180,14 @@ export default function ImageGeneratorPage() {
           )}
         </div>
       </section> */}
-      <span id="generator">
+      <span id="generator" className="scroll-mt-32">
         <ImageGenerator />
       </span>
 
       {/* --- EXAMPLES SECTION --- */}
       <section
         id="examples"
-        className="max-w-4xl mx-auto px-6 py-16 animate-fadeInUp"
+        className="scroll-mt-32 max-w-4xl mx-auto px-6 py-16 animate-fadeInUp"
       >
         <h2 className="text-3xl font-semibold mb-6">Try These Prompts</h2>
         <ul className="space-y-3 text-lg opacity-95">
@@ -197,6 +197,37 @@ export default function ImageGeneratorPage() {
           <li>• Majestic dragon flying over mountains</li>
         </ul>
       </section>
+
+      {/* --- SAMPLE IMAGE PREVIEW SECTION --- */}
+      <section
+        id="example-images"
+        className="max-w-5xl mx-auto px-6 pb-20 animate-fadeInUp"
+      >
+        <h3 className="text-2xl font-semibold mb-6">Example AI Art</h3>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {[
+            "https://placehold.co/600x400?text=Cyberpunk+View",
+            "https://placehold.co/600x400?text=Samurai+Portrait",
+            "https://placehold.co/600x400?text=Anime+Room",
+            "https://placehold.co/600x400?text=Dragon+Sky",
+            "https://placehold.co/600x400?text=Fantasy+Landscape",
+            "https://placehold.co/600x400?text=SciFi+Character",
+          ].map((img, i) => (
+            <div
+              key={i}
+              className="bg-white/10 backdrop-blur-xl rounded-2xl p-3 border border-white/20 shadow-xl hover:scale-[1.03] transition-transform duration-300"
+            >
+              <img
+                src={img}
+                className="rounded-xl w-full h-auto"
+                alt="Example Art"
+              />
+            </div>
+          ))}
+        </div>
+      </section>
+
       {/* --- SAMPLE IMAGES SECTION --- */}
       {/* <section
         id="sample-images"
@@ -300,8 +331,12 @@ export default function ImageGeneratorPage() {
       </section>
 
       {/* --- FOOTER --- */}
+      {/* <footer className="text-center py-10 opacity-80 animate-fadeIn">
+        © 2025 TextArtGen — All Rights Reserved
+      </footer> */}
+
       <footer className="text-center py-10 opacity-80 animate-fadeIn">
-        © 2025 YourSiteName — All Rights Reserved
+        © {new Date().getFullYear()} TextArtGen — All Rights Reserved
       </footer>
     </div>
   );
