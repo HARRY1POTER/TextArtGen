@@ -1,5 +1,6 @@
 import { useState } from "react";
 import ImageGenerator from "./Generator";
+import Navbar from "./Navbar";
 
 export default function ImageGeneratorPage() {
   const [prompt, setPrompt] = useState("");
@@ -34,7 +35,7 @@ export default function ImageGeneratorPage() {
       ))}
 
       {/* --- NAVBAR --- */}
-      <nav className="w-full px-8 py-5 bg-black/20 backdrop-blur-xl border-b border-white/10 fixed top-0 z-50">
+      {/* <nav className="w-full px-8 py-5 bg-black/20 backdrop-blur-xl border-b border-white/10 fixed top-0 z-50">
         <div className="max-w-6xl mx-auto flex justify-between items-center">
           <h1 className="text-2xl font-bold tracking-wide">AI ImageGen</h1>
           <div className="space-x-6 text-lg opacity-90">
@@ -49,7 +50,8 @@ export default function ImageGeneratorPage() {
             </a>
           </div>
         </div>
-      </nav>
+      </nav> */}
+      <Navbar />
 
       <div className="pt-28"></div>
 
@@ -65,6 +67,33 @@ export default function ImageGeneratorPage() {
       </section>
 
       {/* --- FEATURES SECTION --- */}
+      {/* <section
+          id="features"
+          className="max-w-5xl mx-auto grid md:grid-cols-2 gap-8 px-6 py-16"
+        >
+          {[
+            ["⚡ Fast Results", "Generate high-quality art in seconds."],
+            [
+              "🎨 Endless Creativity",
+              "Realistic, anime, fantasy, 3D — anything you can imagine.",
+            ],
+            ["🆓 Free & Simple", "No login. Just enter your prompt and create."],
+            [
+              "📷 High Resolution",
+              "Perfect for projects, social posts, and portfolios.",
+            ],
+          ].map(([title, desc], i) => (
+            <div
+              key={i}
+              style={{ animationDelay: `${i * 0.2}s` }}
+              className="bg-white/10 backdrop-blur-xl animate-fadeInUp rounded-2xl p-6 border border-white/20 shadow-2xl"
+            >
+              <h2 className="text-2xl font-semibold mb-3">{title}</h2>
+              <p className="opacity-80">{desc}</p>
+            </div>
+          ))}
+        </section> */}
+
       <section
         id="features"
         className="max-w-5xl mx-auto grid md:grid-cols-2 gap-8 px-6 py-16"
@@ -80,6 +109,14 @@ export default function ImageGeneratorPage() {
             "📷 High Resolution",
             "Perfect for projects, social posts, and portfolios.",
           ],
+          [
+            "⬇️ Easy Downloads",
+            "Save your generated images instantly in high quality.",
+          ],
+          [
+            "📤 Share Anywhere",
+            "Share your creations directly to social media or with friends.",
+          ],
         ].map(([title, desc], i) => (
           <div
             key={i}
@@ -90,6 +127,17 @@ export default function ImageGeneratorPage() {
             <p className="opacity-80">{desc}</p>
           </div>
         ))}
+      </section>
+
+      {/* --- ABOUT SECTION --- */}
+      <section className="max-w-4xl mx-auto px-6 py-16 animate-fadeInUp">
+        <h2 className="text-3xl font-semibold mb-4">About This AI Tool</h2>
+        <p className="text-lg opacity-90 leading-relaxed">
+          This AI image generator transforms your text into vivid,
+          high-resolution images. Whether you're designing concept art, creating
+          artwork, or exploring new ideas, our next-generation model produces
+          beautiful results instantly.
+        </p>
       </section>
 
       {/* --- IMAGE GENERATOR --- */}
@@ -149,16 +197,106 @@ export default function ImageGeneratorPage() {
           <li>• Majestic dragon flying over mountains</li>
         </ul>
       </section>
+      {/* --- SAMPLE IMAGES SECTION --- */}
+      {/* <section
+        id="sample-images"
+        className="max-w-5xl mx-auto px-6 py-16 animate-fadeInUp"
+      >
+        <h2 className="text-3xl font-semibold mb-6">Sample Generated Images</h2>
 
-      {/* --- ABOUT SECTION --- */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-3 border border-white/20 shadow-xl">
+            <img
+              src="https://placehold.co/600x400?text=Cyberpunk+City"
+              alt="Sample 1"
+              className="rounded-xl"
+            />
+            <p className="mt-3 opacity-90 text-center">
+              Futuristic cyberpunk city with neon lights
+            </p>
+          </div>
+
+          <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-3 border border-white/20 shadow-xl">
+            <img
+              src="https://placehold.co/600x400?text=Samurai+Princess"
+              alt="Sample 2"
+              className="rounded-xl"
+            />
+            <p className="mt-3 opacity-90 text-center">
+              Ultra-realistic portrait of a samurai princess
+            </p>
+          </div>
+
+          <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-3 border border-white/20 shadow-xl">
+            <img
+              src="https://placehold.co/600x400?text=Anime+Bedroom"
+              alt="Sample 3"
+              className="rounded-xl"
+            />
+            <p className="mt-3 opacity-90 text-center">
+              Cozy anime-style bedroom interior
+            </p>
+          </div>
+
+          <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-3 border border-white/20 shadow-xl">
+            <img
+              src="https://placehold.co/600x400?text=Dragon+Mountains"
+              alt="Sample 4"
+              className="rounded-xl"
+            />
+            <p className="mt-3 opacity-90 text-center">
+              Majestic dragon flying over mountains
+            </p>
+          </div>
+        </div>
+      </section> */}
+
+      {/* --- FAQ SECTION --- */}
       <section className="max-w-4xl mx-auto px-6 py-16 animate-fadeInUp">
-        <h2 className="text-3xl font-semibold mb-4">About This AI Tool</h2>
-        <p className="text-lg opacity-90 leading-relaxed">
-          This AI image generator transforms your text into vivid,
-          high-resolution images. Whether you're designing concept art, creating
-          artwork, or exploring new ideas, our next-generation model produces
-          beautiful results instantly.
-        </p>
+        <h2 className="text-3xl font-semibold mb-8 text-center">
+          Frequently Asked Questions
+        </h2>
+
+        <div className="space-y-6">
+          <div className="bg-white/10 backdrop-blur-xl p-6 rounded-2xl border border-white/20">
+            <h3 className="text-xl font-bold mb-2">
+              Is this tool free to use?
+            </h3>
+            <p className="opacity-90">
+              Yes! You can generate unlimited images at no cost.
+            </p>
+          </div>
+
+          <div className="bg-white/10 backdrop-blur-xl p-6 rounded-2xl border border-white/20">
+            <h3 className="text-xl font-bold mb-2">
+              What kind of prompts work best?
+            </h3>
+            <p className="opacity-90">
+              Detailed descriptions work best — include style, colors, lighting,
+              and mood to get the best results.
+            </p>
+          </div>
+
+          <div className="bg-white/10 backdrop-blur-xl p-6 rounded-2xl border border-white/20">
+            <h3 className="text-xl font-bold mb-2">
+              Can I use these images commercially?
+            </h3>
+            <p className="opacity-90">
+              Yes! All generated images are yours to use for personal or
+              commercial projects.
+            </p>
+          </div>
+
+          <div className="bg-white/10 backdrop-blur-xl p-6 rounded-2xl border border-white/20">
+            <h3 className="text-xl font-bold mb-2">
+              How long does image generation take?
+            </h3>
+            <p className="opacity-90">
+              Typically just a few seconds. If the server is busy, it may take a
+              bit longer.
+            </p>
+          </div>
+        </div>
       </section>
 
       {/* --- FOOTER --- */}
