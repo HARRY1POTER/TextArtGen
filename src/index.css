@@ -26,6 +26,31 @@ code {
   }
 }
 
+/* Handle on hover */
+::-webkit-scrollbar-thumb {
+  background: #5c8dff;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 3px;
+  height: 3px;
+  /* display:none; */
+}
+
+::-webkit-progress-bar {
+  height: 3px;
+  border-radius: 20px;
+  background-color: #eee;
+  /* display: none; */
+}
+::-webkit-progress-value {
+  height: 10px;
+  border-radius: 20px;
+  background-color: #747474;
+  /* display: none; */
+}
+
 .clip-rectangle {
   clip-path: inset(0%);
 }
