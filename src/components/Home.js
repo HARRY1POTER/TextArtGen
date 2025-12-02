@@ -8,7 +8,6 @@ import faq from "../json/faq.json";
 import ExampleImages from "./ExampleImages";
 
 export default function ImageGeneratorPage() {
-  const [prompt, setPrompt] = useState("");
   const [image, setImage] = useState(null);
   const [loading, setLoading] = useState(false);
 
