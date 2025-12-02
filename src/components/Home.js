@@ -65,7 +65,10 @@ export default function ImageGeneratorPage() {
             data-aos="fade-in"
             className="bg-white/10 backdrop-blur-xl  rounded-2xl p-6 border border-white/20 shadow-2xl"
           >
-            <h2 className="text-2xl font-semibold mb-3">{item.title}</h2>
+            <h2 className="text-2xl font-semibold mb-3">
+              <span className="animate-pulse duration-500">{item.sym}</span>
+              {item.title}
+            </h2>
             <p className="opacity-80">{item.desc}</p>
           </div>
         ))}
@@ -112,7 +115,7 @@ export default function ImageGeneratorPage() {
 
           {/* Result * /}
           {image && (
-            <div className="mt-6 animate-fadeIn">
+            <div className="mt-6 ">
               <img
                 src={image}
                 className="rounded-xl border border-white/20 shadow-xl mx-auto"
@@ -162,7 +165,7 @@ export default function ImageGeneratorPage() {
         </div>
       </section>
 
-      <footer className="text-center py-10 opacity-80 animate-fadeIn">
+      <footer className="text-center py-10 opacity-80 ">
         © {new Date().getFullYear()} TextArtGen — All Rights Reserved
       </footer>
     </div>

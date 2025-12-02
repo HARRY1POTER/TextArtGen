@@ -1,26 +1,32 @@
 [
   {
-    "title": "⚡ Fast Results",
+    "sym": "⚡",
+    "title": " Fast Results",
     "desc": "Generate high-quality art in seconds."
   },
   {
-    "title": "🎨 Endless Creativity",
+    "sym": "🎨",
+    "title": " Endless Creativity",
     "desc": "Realistic, anime, fantasy, 3D — anything you can imagine."
   },
   {
-    "title": "🆓 Free & Simple",
+    "sym": "🆓",
+    "title": " Free & Simple",
     "desc": "No login. Just enter your prompt and create."
   },
   {
-    "title": "📷 High Resolution",
+    "sym": "📷",
+    "title": " High Resolution",
     "desc": "Perfect for projects, social posts, and portfolios."
   },
   {
-    "title": "⬇️ Easy Downloads",
+    "sym": "⬇️",
+    "title": " Easy Downloads",
     "desc": "Save your generated images instantly in high quality."
   },
   {
-    "title": "📤 Share Anywhere",
+    "sym": "📤",
+    "title": " Share Anywhere",
     "desc": "Share your creations directly to social media or with friends."
   }
 ]
