@@ -5,6 +5,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import features from "../json/features.json";
 import faq from "../json/faq.json";
+import ExampleImages from "./ExampleImages";
 
 export default function ImageGeneratorPage() {
   const [prompt, setPrompt] = useState("");
@@ -145,7 +146,7 @@ export default function ImageGeneratorPage() {
       </section>
 
       {/* --- SAMPLE IMAGE PREVIEW SECTION --- */}
-      <section
+      {/* <section
         id="example-images"
         className="max-w-5xl mx-auto px-6 pb-20 animate-fadeInUp"
       >
@@ -173,7 +174,8 @@ export default function ImageGeneratorPage() {
             </div>
           ))}
         </div>
-      </section>
+      </section> */}
+      <ExampleImages />
 
       {/* --- FAQ SECTION --- */}
       <section className="max-w-4xl mx-auto px-6 py-16 animate-fadeInUp">
