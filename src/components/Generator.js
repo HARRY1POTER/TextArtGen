@@ -399,7 +399,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import ConfettiExplosion from "react-confetti-explosion";
-import defaultImage from "../medium.png";
+import defaultImage from "../Image/medium.png";
 import { drawMask } from "../utils/shapeMask";
 
 function ImageGenerator() {

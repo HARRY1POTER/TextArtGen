@@ -19,17 +19,6 @@ export default function ImageGeneratorPage() {
     }, 2000);
   };
 
-  // useEffect(() => {
-  //   AOS.init({
-  //     duration: 1000, // Customize as needed
-  //     once: true, // Optional: makes animations only run once
-  //   });
-
-  //   // Cleanup AOS on component unmount to avoid memory leaks
-  //   return () => {
-  //     AOS.refresh(); // To reinitialize AOS if needed (not always necessary)
-  //   };
-  // }, []);
   useEffect(() => {
     AOS.init({ duration: 1000 });
   }, []);
@@ -195,7 +184,7 @@ export default function ImageGeneratorPage() {
           {faq.map((item, i) => (
             <div
               key={i}
-              data-aos="fade-in"
+              data-aos="fade-up"
               className="bg-white/10 backdrop-blur-xl p-6 rounded-2xl border border-white/20"
             >
               <h3 className="text-xl font-bold mb-2">{item.question}</h3>
