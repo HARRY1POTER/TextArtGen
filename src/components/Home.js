@@ -138,7 +138,6 @@ export default function ImageGeneratorPage() {
           <div
             key={i}
             data-aos="fade-in"
-            // data-aos-duration="3000"
             style={{ animationDelay: `${i * 0.2}s` }}
             className="bg-white/10 backdrop-blur-xl animate-fadeInUp rounded-2xl p-6 border border-white/20 shadow-2xl"
           >
@@ -235,6 +234,7 @@ export default function ImageGeneratorPage() {
           ].map((img, i) => (
             <div
               key={i}
+              data-aos="fade-in"
               className="bg-white/10 backdrop-blur-xl rounded-2xl p-3 border border-white/20 shadow-xl hover:scale-[1.03] transition-transform duration-300"
             >
               <img
