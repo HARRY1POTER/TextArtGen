@@ -44,7 +44,7 @@ export default function ImageGeneratorPage() {
       <div className="pt-28"></div>
 
       {/* --- HERO SECTION --- */}
-      <section className="max-w-4xl mx-auto text-center py-20 px-6 animate-fadeInUp">
+      <section className="max-w-4xl mx-auto text-center py-20 px-6 ">
         <h1 className="text-5xl md:text-6xl font-extrabold mb-6 drop-shadow-lg">
           Create Stunning AI Images From Text
         </h1>
@@ -63,7 +63,7 @@ export default function ImageGeneratorPage() {
           <div
             key={i}
             data-aos="fade-in"
-            className="bg-white/10 backdrop-blur-xl animate-fadeInUp rounded-2xl p-6 border border-white/20 shadow-2xl"
+            className="bg-white/10 backdrop-blur-xl  rounded-2xl p-6 border border-white/20 shadow-2xl"
           >
             <h2 className="text-2xl font-semibold mb-3">{item.title}</h2>
             <p className="opacity-80">{item.desc}</p>
@@ -72,7 +72,7 @@ export default function ImageGeneratorPage() {
       </section>
 
       {/* --- ABOUT SECTION --- */}
-      <section className="max-w-4xl mx-auto px-6 py-16 animate-fadeInUp">
+      <section className="max-w-4xl mx-auto px-6 py-16 ">
         <h2 className="text-3xl font-semibold mb-4">About This AI Tool</h2>
         <p className="text-lg opacity-90 leading-relaxed">
           This AI image generator transforms your text into vivid,
@@ -85,7 +85,7 @@ export default function ImageGeneratorPage() {
       {/* --- IMAGE GENERATOR --- */}
       {/* <section
         id="generator"
-        className="max-w-4xl mx-auto py-16 px-6 animate-fadeInUp"
+        className="max-w-4xl mx-auto py-16 px-6 "
       >
         <h2 className="text-4xl font-bold text-center mb-10">
           Generate Your Image
@@ -129,7 +129,7 @@ export default function ImageGeneratorPage() {
       {/* --- EXAMPLES SECTION --- */}
       <section
         id="examples"
-        className="scroll-mt-32 max-w-4xl mx-auto px-6 py-16 animate-fadeInUp"
+        className="scroll-mt-32 max-w-4xl mx-auto px-6 py-16 "
       >
         <h2 className="text-3xl font-semibold mb-6">Try These Prompts</h2>
         <ul className="space-y-3 text-lg opacity-95">
@@ -144,7 +144,7 @@ export default function ImageGeneratorPage() {
       <ExampleImages />
 
       {/* --- FAQ SECTION --- */}
-      <section className="max-w-4xl mx-auto px-6 py-16 animate-fadeInUp">
+      <section className="max-w-4xl mx-auto px-6 py-16 ">
         <h2 className="text-3xl font-semibold mb-8 text-center">
           Frequently Asked Questions
         </h2>
