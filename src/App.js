@@ -1,4 +1,3 @@
-import ImageGenerator from "./components/Generator";
 import ImageGeneratorPage from "./components/Home";
 
 function App() {
@@ -8,7 +7,6 @@ function App() {
         background: "radial-gradient(ellipse at top, #1b2735 70%, #080e21 95%)",
       }}
     >
-      {/* <ImageGenerator /> */}
       <ImageGeneratorPage />
     </div>
   );

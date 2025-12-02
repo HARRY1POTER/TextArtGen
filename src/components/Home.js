@@ -26,10 +26,6 @@ export default function ImageGeneratorPage() {
 
   return (
     <div className="relative min-h-screen w-full overflow-hidden text-white">
-      {/* --- PARALLAX BACKGROUND LAYERS --- */}
-      {/* <div className="parallax-layer layer1 bg-gradient-to-br from-[#122642] to-[#5b6ab5] opacity-80"></div>
-      <div className="parallax-layer layer2 bg-gradient-to-br from-[#0e1d33] to-[#7b8ac5] opacity-70"></div>  */}
-
       {/* --- FLOATING PARTICLES --- */}
       {[...Array(20)].map((_, i) => (
         <span
@@ -146,35 +142,6 @@ export default function ImageGeneratorPage() {
       </section>
 
       {/* --- SAMPLE IMAGE PREVIEW SECTION --- */}
-      {/* <section
-        id="example-images"
-        className="max-w-5xl mx-auto px-6 pb-20 animate-fadeInUp"
-      >
-        <h3 className="text-2xl font-semibold mb-6">Example AI Art</h3>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {[
-            "https://placehold.co/600x400?text=Cyberpunk+View",
-            "https://placehold.co/600x400?text=Samurai+Portrait",
-            "https://placehold.co/600x400?text=Anime+Room",
-            "https://placehold.co/600x400?text=Dragon+Sky",
-            "https://placehold.co/600x400?text=Fantasy+Landscape",
-            "https://placehold.co/600x400?text=SciFi+Character",
-          ].map((img, i) => (
-            <div
-              key={i}
-              data-aos="fade-in"
-              className="bg-white/10 backdrop-blur-xl rounded-2xl p-3 border border-white/20 shadow-xl hover:scale-[1.03] transition-transform duration-300"
-            >
-              <img
-                src={img}
-                className="rounded-xl w-full h-auto"
-                alt="Example Art"
-              />
-            </div>
-          ))}
-        </div>
-      </section> */}
       <ExampleImages />
 
       {/* --- FAQ SECTION --- */}
