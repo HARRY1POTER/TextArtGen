@@ -1,0 +1,18 @@
+[
+  {
+    "question": "Is this tool free to use?",
+    "answer": "Yes! You can generate unlimited images at no cost."
+  },
+  {
+    "question": "What kind of prompts work best?",
+    "answer": "Detailed descriptions work best — include style, colors, lighting, and mood to get the best results."
+  },
+  {
+    "question": "Can I use these images commercially?",
+    "answer": "Yes! All generated images are yours to use for personal or commercial projects."
+  },
+  {
+    "question": "How long does image generation take?",
+    "answer": "Typically just a few seconds. If the server is busy, it may take a bit longer."
+  }
+]
