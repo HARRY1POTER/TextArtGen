@@ -36,7 +36,7 @@ const Navbar = () => {
         {/* Mobile Menu */}
         <div
           id="mobileMenu"
-          className="hidden md:hidden mt-4 px-4 space-y-4 text-lg opacity-95 bg-black/30 backdrop-blur-xl rounded-xl py-4 border border-white/10 "
+          className="hidden md:hidden mt-4 px-4 space-y-4 text-lg opacity-95 bg-black/30 backdrop-blur-xl rounded-xl py-4 border border-white/10"
         >
           <a
             href="#features"
