@@ -1,6 +1,8 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import ImageGenerator from "./Generator";
 import Navbar from "./Navbar";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 export default function ImageGeneratorPage() {
   const [prompt, setPrompt] = useState("");
@@ -14,6 +16,21 @@ export default function ImageGeneratorPage() {
       setLoading(false);
     }, 2000);
   };
+
+  // useEffect(() => {
+  //   AOS.init({
+  //     duration: 1000, // Customize as needed
+  //     once: true, // Optional: makes animations only run once
+  //   });
+
+  //   // Cleanup AOS on component unmount to avoid memory leaks
+  //   return () => {
+  //     AOS.refresh(); // To reinitialize AOS if needed (not always necessary)
+  //   };
+  // }, []);
+  useEffect(() => {
+    AOS.init({ duration: 1000 });
+  }, []);
 
   return (
     <div className="relative min-h-screen w-full overflow-hidden text-white">
@@ -120,6 +137,8 @@ export default function ImageGeneratorPage() {
         ].map(([title, desc], i) => (
           <div
             key={i}
+            data-aos="fade-in"
+            // data-aos-duration="3000"
             style={{ animationDelay: `${i * 0.2}s` }}
             className="bg-white/10 backdrop-blur-xl animate-fadeInUp rounded-2xl p-6 border border-white/20 shadow-2xl"
           >
