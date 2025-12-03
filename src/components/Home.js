@@ -156,6 +156,7 @@ export default function ImageGeneratorPage() {
             <div
               key={i}
               data-aos={i % 2 === 0 ? "fade-right" : "fade-left"}
+              data-aos-duration="2000"
               className="bg-white/10 backdrop-blur-xl p-6 rounded-2xl border border-white/20"
             >
               <h3 className="text-xl font-bold mb-2">{item.question}</h3>
