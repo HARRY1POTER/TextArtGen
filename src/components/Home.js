@@ -57,7 +57,7 @@ export default function ImageGeneratorPage() {
       {/* --- FEATURES SECTION --- */}
       <section
         id="features"
-        className="scroll-mt-32 max-w-5xl mx-auto grid md:grid-cols-2 gap-8 px-6 py-16"
+        className="scroll-mt-[70px] md:scroll-mt-20 max-w-5xl mx-auto grid md:grid-cols-2 gap-8 px-6 py-16"
       >
         {features.map((item, i) => (
           <div
@@ -125,14 +125,14 @@ export default function ImageGeneratorPage() {
           )}
         </div>
       </section> */}
-      <span id="generator" className="scroll-mt-32">
+      <span id="generator" className="scroll-mt-[70px] md:scroll-mt-20">
         <ImageGenerator />
       </span>
 
       {/* --- EXAMPLES SECTION --- */}
       <section
         id="examples"
-        className="scroll-mt-32 max-w-4xl mx-auto px-6 py-16 "
+        className="scroll-mt-[70px] md:scroll-mt-20 max-w-4xl mx-auto px-6 py-16 "
       >
         <h2 className="text-3xl font-semibold mb-6">Try These Prompts</h2>
         <ul className="space-y-3 text-lg opacity-95">
