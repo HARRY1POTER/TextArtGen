@@ -155,7 +155,7 @@ export default function ImageGeneratorPage() {
           {faq.map((item, i) => (
             <div
               key={i}
-              data-aos="fade-up"
+              data-aos={i % 2 === 0 ? "fade-right" : "fade-left"}
               className="bg-white/10 backdrop-blur-xl p-6 rounded-2xl border border-white/20"
             >
               <h3 className="text-xl font-bold mb-2">{item.question}</h3>
