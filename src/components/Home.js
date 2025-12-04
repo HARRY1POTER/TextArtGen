@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import ImageGenerator from "./Generator";
 import Navbar from "./Navbar";
 import AOS from "aos";
@@ -8,17 +8,6 @@ import faq from "../json/faq.json";
 import ExampleImages from "./ExampleImages";
 
 export default function ImageGeneratorPage() {
-  const [image, setImage] = useState(null);
-  const [loading, setLoading] = useState(false);
-
-  const generateImage = async () => {
-    setLoading(true);
-    setTimeout(() => {
-      setImage("https://placehold.co/600x400?text=Generated+Image");
-      setLoading(false);
-    }, 2000);
-  };
-
   useEffect(() => {
     AOS.init({ duration: 1000 });
   }, []);
@@ -86,45 +75,6 @@ export default function ImageGeneratorPage() {
       </section>
 
       {/* --- IMAGE GENERATOR --- */}
-      {/* <section
-        id="generator"
-        className="max-w-4xl mx-auto py-16 px-6 "
-      >
-        <h2 className="text-4xl font-bold text-center mb-10">
-          Generate Your Image
-        </h2>
-
-        <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-8 border border-white/20 shadow-2xl">
-          {/* Input Box * /}
-          <input
-            type="text"
-            value={prompt}
-            onChange={(e) => setPrompt(e.target.value)}
-            placeholder="Describe your image..."
-            className="w-full bg-white/20 border border-white/30 p-4 rounded-xl text-white placeholder-white/60 focus:ring-2 ring-white/40"
-          />
-
-          {/* Generate Button with Spark Animation * /}
-          <button
-            onClick={generateImage}
-            disabled={loading}
-            className="btn-spark w-full mt-4 py-3 bg-white/20 border border-white/30 rounded-xl hover:bg-white/30 transition disabled:opacity-50"
-          >
-            {loading ? "Generating..." : "Generate Image"}
-          </button>
-
-          {/* Result * /}
-          {image && (
-            <div className="mt-6 ">
-              <img
-                src={image}
-                className="rounded-xl border border-white/20 shadow-xl mx-auto"
-                alt="Generated"
-              />
-            </div>
-          )}
-        </div>
-      </section> */}
       <span id="generator" className="scroll-mt-[70px] md:scroll-mt-20">
         <ImageGenerator />
       </span>
