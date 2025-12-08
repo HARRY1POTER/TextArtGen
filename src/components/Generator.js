@@ -555,6 +555,8 @@ function ImageGenerator() {
             {loading ? "Generating..." : "Generate Image"}
           </button>
 
+          {error && <p className="text-red-400 text-lg mt-3 text-center">{error}</p>}
+
           <h3 className="text-white text-lg mt-8 mb-3 font-medium">
             Choose Shape
           </h3>
