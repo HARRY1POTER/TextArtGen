@@ -3,7 +3,10 @@ import React from "react";
 const Navbar = () => {
   return (
     <div>
-      <nav className="w-full px-6 py-5 bg-black/20 backdrop-blur-xl border-b border-white/10 fixed top-0 z-50">
+      <nav
+        style={{ zIndex: 1 }}
+        className="w-full px-6 py-5 bg-black/20 backdrop-blur-xl border-b border-white/10 fixed top-0 z -50"
+      >
         <div className="max-w-6xl mx-auto flex justify-between items-center">
           <h1 className="text-2xl font-bold tracking-wide">
             <a

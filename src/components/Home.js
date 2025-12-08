@@ -66,7 +66,7 @@ export default function ImageGeneratorPage() {
       {/* --- ABOUT SECTION --- */}
       <section className="max-w-4xl mx-auto px-6 py-16 ">
         <h2 className="text-3xl font-semibold mb-4">About This AI Tool</h2>
-        <p className="text-lg opacity-90 leading-relaxed">
+        <p className="text-lg opacity-90 leading-relaxed text-center">
           This AI image generator transforms your text into vivid,
           high-resolution images. Whether you're designing concept art, creating
           artwork, or exploring new ideas, our next-generation model produces
