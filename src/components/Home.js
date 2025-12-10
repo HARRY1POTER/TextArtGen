@@ -97,7 +97,7 @@ export default function ImageGeneratorPage() {
       <ExampleImages />
 
       {/* --- FAQ SECTION --- */}
-      <section className="max-w-4xl mx-auto px-6 py-16 ">
+      <section className="max-w-4xl mx-auto px-6 py-16">
         <h2 className="text-3xl font-semibold mb-8 text-center">
           Frequently Asked Questions
         </h2>
@@ -116,7 +116,7 @@ export default function ImageGeneratorPage() {
         </div>
       </section>
 
-      <footer className="text-center py-10 opacity-80 ">
+      <footer className="text-center py-10 opacity-80">
         © {new Date().getFullYear()} TextArtGen — All Rights Reserved
       </footer>
     </div>
